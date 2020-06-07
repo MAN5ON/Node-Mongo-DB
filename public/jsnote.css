@@ -1,0 +1,23 @@
+.Jsnote {
+    margin-bottom: 1rem;
+}
+
+.Jsnote span {
+    font-size: 20px;
+    font-family: Consolas;
+    color: black;
+}
+
+.Jsnote label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 1rem;
+}
+
+.Jsnote i {
+    z-index: 2;
+}

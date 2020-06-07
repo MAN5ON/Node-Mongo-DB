@@ -1,0 +1,22 @@
+.Shkaf {
+    margin-bottom: 1rem;
+}
+
+.Shkaf span {
+    font-size: 20px;
+    color: black;
+}
+
+.Shkaf label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 1rem;
+}
+
+.Shkaf i {
+    z-index: 2;
+}

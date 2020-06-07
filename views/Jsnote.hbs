@@ -1,0 +1,37 @@
+<h3>Cправочник JS</h3>
+
+<form action="/clear_jsnote" method="POST">
+    <button class="btn" type="submit"> Очистить список команд</button>
+</form>
+{{#if jsnote_s.length}}
+    <ul>
+        {{#each jsnote_s}}
+            <li class="Jsnote">
+                <label>
+                    <span>  Команда:  {{command}}  <br>  Библиотека:  {{library}}  <br>  Описание:  {{whatdo}}  </span>
+                </label>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Добавьте команду!</p>
+{{/if}}
+
+<form action="/jsnote" method="POST">
+    <h4>Создание записи</h4>
+    <div class=" input-field">
+        <h5>Команда</h5>
+        <input type="text" name="command">
+        <label> </label>
+
+        <h5>Библиотека</h5>
+        <input type="text" name="library">
+        <label> </label>
+
+        <h5>Описание</h5>
+        <input type="text" name="whatdo">
+        <label> </label>
+    </div>
+
+    <button type="submit" class="btn">Добавить в справочник</button>
+</form>

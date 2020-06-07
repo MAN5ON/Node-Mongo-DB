@@ -1,0 +1,22 @@
+.Spisok {
+    margin-bottom: 20px;
+}
+
+.Spisok span.completed {
+    text-decoration: line-through;
+}
+
+.Spisok label {
+    width: 100%;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 20px;
+    height: 75px;
+}
+
+.Spisok i {
+    z-index: 2;
+}

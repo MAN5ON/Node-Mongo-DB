@@ -1,0 +1,45 @@
+<h3>Содержимое шкафа</h3>
+
+<form action="/clear_shkaf" method="POST">
+    <button class="btn" type="submit"> Очистить список вещей</button>
+</form>
+{{#if shkaf_s.length}}
+    <ul>
+        {{#each shkaf_s}}
+            <li class="Shkaf">
+                <label>
+                    <span> Тип:  {{type}}  |Бренд:  {{brand}}  <br>  Расположение:  {{gde}}  |Размер:  {{razmer}}  |  Кол-во:  {{kolvo}}</span>
+                </label>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Перечислите содержимое шкафа!</p>
+{{/if}}
+
+<form action="/shkaf" method="POST">
+    <h4>Создание записи</h4>
+    <div class=" input-field">
+        <h5>Тип предмета</h5>
+        <input type="text" name="type">
+        <label> </label>
+
+        <h5>Бренд</h5>
+        <input type="text" name="brand">
+        <label> </label>
+
+        <h5>Расположение</h5>
+        <input type="text" name="gde">
+        <label> </label>
+
+        <h5>Размер</h5>
+        <input type="text" name="razmer">
+        <label> </label>
+
+        <h5>Количество</h5>
+        <input type="number" name="kolvo">
+        <label> </label>
+    </div>
+
+    <button type="submit" class="btn">Добавить вещь</button>
+</form>

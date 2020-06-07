@@ -1,0 +1,37 @@
+<nav class="green">
+    <div class="nav-wrapper">
+        <a href="/spisok" class="brand-logo">Контрольная Работа по СУБД</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            {{#if isSpisok}}
+                <li class="active"><a href="/spisok">Список Покупок</a></li>
+            {{else}}
+                <li><a href="/spisok">Список Покупок</a></li>
+            {{/if}}
+
+            {{#if isUroki}}
+                <li class="active"><a href="/uroki">Домашнее задание</a></li>
+            {{else}}
+                <li><a href="/uroki">Домашнее задание</a></li>
+            {{/if}}
+
+            {{#if isShkaf}}
+                <li class="active"><a href="/shkaf">Содержимое шкафа</a></li>
+            {{else}}
+                <li><a href="/shkaf">Содержимое шкафа</a></li>
+            {{/if}}
+
+            {{#if isHolod}}
+                <li class="active"><a href="/holod">Что в холодильнике?</a></li>
+            {{else}}
+                <li><a href="/holod">Что в холодильнике?</a></li>
+            {{/if}}
+
+            {{#if isJsnote}}
+                <li class="active"><a href="/jsnote">Блокнот по JS</a></li>
+            {{else}}
+                <li><a href="/jsnote">Блокнот по JS</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>

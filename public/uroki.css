@@ -1,0 +1,22 @@
+.Uroki {
+    margin-bottom: 20px;
+}
+
+.Uroki span.completed_u {
+    text-decoration: line-through;
+}
+
+.Uroki label {
+    width: 100%;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 10px;
+    height: 100px;
+}
+
+.Uroki i {
+    z-index: 2;
+}

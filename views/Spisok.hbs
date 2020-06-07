@@ -1,0 +1,50 @@
+<h3>Список покупок</h3>
+
+<form action="/clear_spisok" method="POST">
+    <button class="btn" type="submit"> Очистить список</button>
+</form>
+{{#if spisok_s.length}}
+    <ul>
+        {{#each spisok_s}}
+            <li class="Spisok">
+                <form action="/complete" method="POST">
+                    <label>
+                        {{#if completed}}
+                            <input type="checkbox" checked name="completed">
+                            <span class="completed">Название:  {{title}}  <br>Описание:  {{description}}  |  Кол-во:  {{quantity}}</span>
+                        {{else}}
+                            <input type="checkbox" name="completed">
+                            <span>Название:  {{title}}  <br>Описание:  {{description}}  |Кол-во:  {{quantity}}</span>
+                        {{/if}}
+
+                        <input type="hidden" value="{{_id}}" name="id">
+
+                        <button class="btn btn-small" type="submit">Save</button>
+                    </label>
+                </form>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Добавьте что-нибудь в список!</p>
+{{/if}}
+
+<form action="/spisok" method="POST">
+    <h4>Создание записи</h4>
+
+    <div class=" input-field">
+        <h5>Название</h5>
+        <input type="text" name="title">
+        <label> </label>
+
+        <h5>Описание</h5>
+        <input type="text" name="description">
+        <label> </label>
+
+        <h5>Количество</h5>
+        <input type="number" name="quantity">
+        <label> </label>
+    </div>
+
+    <button type="submit" class="btn">Внести в список</button>
+</form>

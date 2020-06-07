@@ -1,0 +1,41 @@
+<h3>Содержимое холодильника</h3>
+
+<form action="/clear_holod" method="POST">
+    <button class="btn" type="submit"> Очистить список продуктов</button>
+</form>
+{{#if holod_s.length}}
+    <ul>
+        {{#each holod_s}}
+            <li class="Holod">
+                <label>
+                    <span>Тип товара:  {{type}}  |Производитель:  {{przv}}  <br>Куплен:  {{kpl}} <br>Годен до:  {{prpl}}</span>
+                </label>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Перечислите содержимое холодильника!</p>
+{{/if}}
+
+<form action="/holod" method="POST">
+    <h4>Создание записи</h4>
+    <div class=" input-field">
+        <h5>Тип товара</h5>
+        <input type="text" name="type">
+        <label> </label>
+
+        <h5>Производитель</h5>
+        <input type="text" name="przv">
+        <label> </label>
+
+        <h5>Куплен</h5>
+        <input type="date" name="kpl">
+        <label> </label>
+
+        <h5>Годен до</h5>
+        <input type="date" name="prpl">
+        <label> </label>
+    </div>
+
+    <button type="submit" class="btn">Добавить в холодильник</button>
+</form>

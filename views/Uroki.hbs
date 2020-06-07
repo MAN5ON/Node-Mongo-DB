@@ -1,0 +1,54 @@
+<h3>Список заданий:</h3>
+
+<form action="/clear_uroki" method="POST">
+    <button class="btn" type="submit">Удалить все записи</button>
+</form>
+{{#if uroki_s.length}}
+    <ul>
+        {{#each uroki_s}}
+            <li class="Uroki">
+                <form action="/complete_u" method="POST">
+                    <label>
+                        {{#if completed_u}}
+                            <input type="checkbox" checked name="completed_u">
+                            <span class="completed_u">Предмет:  {{predmet}}  |Работа:  {{rabota}}<br>Описание:  {{opisanie}}<br>  Дата сдачи: {{srok}}</span>
+                        {{else}}
+                            <input type="checkbox" name="completed_u">
+                            <span>Предмет:  {{predmet}}  |Работа:  {{rabota}}<br>Описание:  {{opisanie}}<br>  Дата сдачи: {{srok}}</span>
+                        {{/if}}
+
+                        <input type="hidden" value="{{_id}}" name="id_u">
+
+                        <button class="btn btn-small" type="submit">Save</button>
+                    </label>
+                </form>
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Что задали?</p>
+{{/if}}
+
+<form action="/uroki" method="POST">
+    <h4>Создание записи</h4>
+
+    <div class=" input-field">
+        <h5>Название предмета</h5>
+        <input type="text" name="predmet">
+        <label> </label>
+
+        <h5>Работа</h5>
+        <input type="text" name="rabota">
+        <label> </label>
+
+        <h5>Описание</h5>
+        <input type="text" name="opisanie">
+        <label> </label>
+
+        <h5>Срок сдачи</h5>
+        <label for="date"> </label>
+        <input type="date" id="date" name="srok"/>
+    </div>
+
+    <button type="submit" class="btn">Добавить предмет</button>
+</form>
